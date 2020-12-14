@@ -9,10 +9,12 @@ It is app that you can create a user specific to-do list and item. You can give 
 
 # Getting Started
 
-* Download the distribution code.
-* In your terminal, cd into the **Django-Todo-App directory**.
+* Download the distribution code and unzip.
+* In your terminal, cd into the **todolist**.
 * Run **python manage.py makemigrations todo** to make migrations for the todo app.
 * Run **python manage.py migrate** to apply migrations to your database.
+* Run **python manage.py runserver** and open the http://127.0.0.1:8000/ in your browser.
+
 
 # Requirements
 * Django
