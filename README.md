@@ -15,7 +15,7 @@ It is app that you can create a user specific to-do list and item. You can give 
 
 
 # Requirements
-* Django
+* django
 * python version 3.6 or above
 * DB Browser for SQLite
 
