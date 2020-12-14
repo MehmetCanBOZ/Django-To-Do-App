@@ -1,5 +1,3 @@
-# Django-To-Do-App
-To-do app with python, django, django orm
 
 # Django-Todo-App
 Todo app with python, django, django orm
