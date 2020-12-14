@@ -14,7 +14,7 @@ def index(request):
         return HttpResponseRedirect(reverse("login"))
 
     return render(request, "todo/index.html")
-
+#Render all to-do list for user
 @login_required(login_url='/login')
 def todo(request):
     user=request.user
@@ -22,7 +22,7 @@ def todo(request):
     return render(request,"todo/todo.html",{
         "dolists":dolists
     })
-
+#Adding to-do list
 @login_required(login_url='/login')
 def addtodo(request):
     user=request.user
@@ -33,7 +33,8 @@ def addtodo(request):
         return HttpResponseRedirect(reverse("todo"))
     else:
         return render(request, "todo/addtodo.html")
-
+    
+#Changing status of todo item
 @login_required(login_url='/login')
 def done(request,list_id,item_id):
     if request.method == "POST":
@@ -46,13 +47,15 @@ def done(request,list_id,item_id):
           done_item.status = "C"
       done_item.save()
       return HttpResponseRedirect(reverse("listitem", args=(list_id,)))
-
+    
+#delete to-do list
 @login_required(login_url='/login')
 def deletetodo(request,list_id):
     todo = Dolist.objects.get(pk=list_id)
     todo.delete()
     return HttpResponseRedirect(reverse("todo"))
 
+#Render completed item in to-do list
 @login_required(login_url='/login')
 def complete(request,list_id):
     todo = Dolist.objects.get(pk=list_id)
@@ -61,7 +64,7 @@ def complete(request,list_id):
     return render(request, "todo/complete.html", {
         "todo": todo, "todolists": todolists, "C": C
     })
-
+#Render expired item in to-do list
 @login_required(login_url='/login')
 def expired(request,list_id):
     todo = Dolist.objects.get(pk=list_id)
@@ -70,6 +73,7 @@ def expired(request,list_id):
     return render(request, "todo/expired.html", {
         "todo": todo, "todolists": todolists, "x": x
     })
+#Render uncompleted item in to-do list
 @login_required(login_url='/login')
 def listitem(request,list_id):
     todo=Dolist.objects.get(pk=list_id)
@@ -79,7 +83,7 @@ def listitem(request,list_id):
     return render(request,"todo/listitem.html",{
         "todo":todo,"todolists":todolists,"C":C
     })
-
+#adding item existing to do list
 @login_required(login_url='/login')
 def additem(request,list_id):
     todo=Dolist.objects.get(pk=list_id)
