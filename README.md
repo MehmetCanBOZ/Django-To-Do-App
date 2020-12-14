@@ -15,9 +15,9 @@ It is app that you can create a user specific to-do list and item. You can give 
 
 
 # Requirements
-* django  https://www.djangoproject.com/download/
-* python version 3.6 or above 
-* DB Browser for SQLite https://sqlitebrowser.org/dl/
+* django                        https://www.djangoproject.com/download/
+* python version 3.6 or above   https://www.python.org/downloads/
+* DB Browser for SQLite         https://sqlitebrowser.org/dl/
 
 # Understanding
 * In the distribution code is a Django project called todo that contains a single app called todo.
