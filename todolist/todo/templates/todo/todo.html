@@ -1,0 +1,26 @@
+{% extends "todo/layout.html" %}
+
+
+{% block body %}
+
+<div class="container">
+    <br><br>
+<table>
+  <tr>
+    <th>Name of TodoList</th>
+  </tr>
+    {% for dolist in dolists %}
+  <tr>
+    <td><a href="{% url 'listitem' dolist.id %}"> {{dolist.name_list}} </a></td>
+  </tr>
+    {% empty %}
+    <tr>
+    <td>No To-Do List Yet </td>
+  </tr>
+  {% endfor %}
+</table>
+    <br>
+    <a href="{%url 'addtodo' %}" class="btn btn-primary btn-lg active">Add Todo List</a>
+</div>
+
+{% endblock %}

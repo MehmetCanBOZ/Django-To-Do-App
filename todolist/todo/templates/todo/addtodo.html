@@ -1,0 +1,18 @@
+{% extends "todo/layout.html" %}
+
+
+{% block body %}
+
+<div class="container">
+    <br><br>
+<form action="{% url 'addtodo' %}" method="post" >
+    {% csrf_token %}
+  <div class="form-group">
+    <input type="text" class="form-control" name="name" placeholder="Enter name">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+{% endblock %}
